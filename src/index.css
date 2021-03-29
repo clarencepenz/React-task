@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Raleway:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary: #0c2e8a;
+  --success: #50d8af;
+  --secondary: #555;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+*,
+*:hover,
+*:active {
+  box-sizing: border-box;
+  transition: 0.25s ease all;
+  outline: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+._row {
+  display: flex;
+  align-items: center;
+}
+
+._row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.link,
+.link {
+  color: var(--secondary) !important;
+}
+a.link:hover,
+.link:hover {
+  color: var(--success) !important;
+}
+
+img {
+  width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+option {
+  color: var(--secondary);
+}
+/* 
+[[
+  Nav
+]] */
+
+._navlink {
+  display: flex;
+  align-items: center;
+}
+
+/* [[
+  Carousel
+]] */
+
+.carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+.carousel-item {
+  margin-bottom: 60px;
+}
+
+._carousel-img {
+  border: 1px solid var(--success);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* [[
+  Animations
+]] */
+
+/* input */
+._input ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--success);
+  transition: 0.4s;
+}
+._input:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+  left: 0;
+}
+
+._textArea ~ .focus-border:before,
+._textArea ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--success);
+  transition: 0.3s;
+}
+._textArea ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+._textArea ~ .focus-border i:before,
+._textArea ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--success);
+  transition: 0.4s;
+}
+._textArea ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+._textArea:focus ~ .focus-border:before,
+._textArea:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+._textArea:focus ~ .focus-border i:before,
+._textArea:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
+}
+
+._mt-lg {
+  margin-top: 120px;
+}
+
+._mt-md {
+  margin-top: 80px;
+}
+
+._mt-sm {
+  margin-top: 40px;
+}
+
+/* [[
+  Profile
+]] */
+
+.profile-holder {
+  position: relative;
+}
+
+._profilePicture {
+  border: 1px solid var(--success);
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+}
+
+._profilePicture-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  color: var(--secondary);
+  font-size: 20px;
+}
+
+.swal2-popup.swal2-toast.swal2-icon-success {
+  background: #28a746;
+}
+
+.swal2-popup.swal2-toast.swal2-icon-error {
+  background: #dc3545;
+}
+
+.swal2-popup.swal2-toast .swal2-title {
+  color: #fff;
+}
+/* 
+[[
+  Deposit
+]] 
+*/
+
+._pay-card {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+._pay-card.click {
+  box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.2);
+  animation: 0.7s pulse 1 forwards;
+}
+
+._pay-card img {
+  width: 220px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(0.95, 0.95, 0.95);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-20%, 0, 0);
+    transform: translate3d(-20%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+.fadeInLeft {
+  animation: 0.9s ease-in-out fadeInLeft 1 forwards;
+}
+
+/* [[
+  Media Queries
+]] */
+
+@media all and (max-width: 996px) {
+  ._navlink {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    background-color: rgba(85, 85, 85, 0.9);
+    padding: 30px 10px;
+    z-index: 500;
+    flex-direction: column;
+    align-items: flex-start;
+    left: -100%;
+  }
+
+  ._navlink-open {
+    left: 0px !important;
+  }
+}
