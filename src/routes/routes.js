@@ -1,6 +1,6 @@
 import React from 'react';
-import Admin from '../components/Admin';
-import Main from '../components/Main';
+import Admin from '../views/Admin';
+import Main from '../views/Main';
 
 export default function Routes() {
   const [role, setRole] = React.useState('');

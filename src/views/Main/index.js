@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {data} from '../../payload';
+import DataItem from '../../components/DataItem';
+import { data } from '../../payload';
 
 export default function Main() {
   const [payload, setPayload] = useState([]);
@@ -24,29 +25,13 @@ export default function Main() {
   };
 
   const mainItem = payload.map((i) => (
-    <div
+    <DataItem
       key={i._id}
-      style={{
-        backgroundColor: i.clicked ? 'green' : 'yellow',
-        color: i.clicked ? '#fff' : '#000',
-        margin: '2rem',
-        padding: '4rem',
-        width: '300px',
-        borderColor: '#555',
-        cursor: 'pointer',
-      }}
       onClick={() => changeColor(i._id)}
-    >
-      <h3 style={styles.text}>{i.name}</h3>
-    </div>
+      name={i.name}
+      clicked={i.clicked}
+    />
   ));
 
   return <div>{mainItem}</div>;
 }
-
-const styles = {
-  text: {
-    textAlign: 'center',
-    margin: '0',
-  },
-};

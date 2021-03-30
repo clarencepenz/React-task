@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {data} from '../../payload';
+import DataItem from '../../components/DataItem';
+import { data } from '../../payload';
+
 export default function Admin() {
   const [payload, setPayload] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -7,7 +9,6 @@ export default function Admin() {
   useEffect(() => {
     setPayload(data.admin);
     setLoading(true);
-    
   }, [loading]);
 
   const adminColor = (id) => {
@@ -24,29 +25,13 @@ export default function Admin() {
   };
 
   const adminItem = payload.map((i) => (
-    <div
+    <DataItem
       key={i._id}
-      style={{
-        backgroundColor: i.clicked ? 'green' : 'yellow',
-        color: i.clicked ? '#fff' : '#000',
-        margin: '2rem',
-        padding: '4rem',
-        width: '300px',
-        borderColor: '#555',
-        cursor: 'pointer',
-      }}
       onClick={() => adminColor(i._id)}
-    >
-      <h3 style={styles.text}>{i.name}</h3>
-    </div>
+      name={i.name}
+      clicked={i.clicked}
+    />
   ));
 
   return <div>{adminItem}</div>;
 }
-
-const styles = {
-  text: {
-    textAlign: 'center',
-    margin: '0',
-  },
-};
